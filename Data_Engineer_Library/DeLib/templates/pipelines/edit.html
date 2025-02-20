@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Edit Pipeline{% endblock %}
+{% block content %}
+<h2>Edit Pipeline</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Update Pipeline</button>
+</form>
+{% endblock %}

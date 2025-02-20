@@ -74,23 +74,10 @@ WSGI_APPLICATION = "Data_Engineer_Library.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-import os
-import pymysql
-
-pymysql.install_as_MySQLdb()
-
-
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "DeLib",  # Database name
-        "USER": "root",  # MySQL user
-        "PASSWORD": "Ishmael@123",  # MySQL password
-        "HOST": "localhost",  # Localhost IP
-        "PORT": "3306",  # MySQL default port
-        "OPTIONS": {
-            "init_command": "SET sql_mode='STRICT_TRANS_TABLES'"
-        }
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
 

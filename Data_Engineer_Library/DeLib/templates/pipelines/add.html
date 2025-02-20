@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Add Pipeline{% endblock %}
+{% block content %}
+<div class="add-form-container">
+    <h2>Add New Pipeline</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Pipeline</button>
+    </form>
+</div>
+{% endblock %}

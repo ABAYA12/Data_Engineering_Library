@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Pipeline Details{% endblock %}
+{% block content %}
+<h2>Pipeline Details</h2>
+<ul>
+    <li><strong>Title:</strong> {{ pipeline.title }}</li>
+    <li><strong>Author:</strong> {{ pipeline.author }}</li>
+    <li><strong>Purpose:</strong> {{ pipeline.purpose }}</li>
+    <li><strong>Language:</strong> {{ pipeline.language }}</li>
+    <li><strong>Category:</strong> {{ pipeline.category }}</li>
+    <li><strong>Database:</strong> {{ pipeline.database_type }}</li>
+    <li><strong>Cloud Provider:</strong> {{ pipeline.cloud_provider }}</li>
+    <li><strong>Datawarehouse:</strong> {{ pipeline.datawarehouse }}</li>
+    <li><strong>Project Type:</strong> {{ pipeline.type_of_project }}</li>
+    <li><strong>Version:</strong> {{ pipeline.version }}</li>
+    <li><strong>Source Code URL:</strong> <a href="{{ pipeline.source_code_url }}" target="_blank">{{ pipeline.source_code_url }}</a></li>
+    <li><strong>Description:</strong> {{ pipeline.description }}</li>
+    <li><strong>Year:</strong> {{ pipeline.year }}</li>
+</ul>
+<a href="{% url 'pipeline_edit' pipeline.pk %}">Edit</a> |
+<a href="{% url 'pipeline_delete' pipeline.pk %}">Delete</a> |
+<a href="{% url 'pipeline_list' %}">Back to List</a>
+{% endblock %}

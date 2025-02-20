@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Pipeline List{% endblock %}
+{% block content %}
+<h2>All Pipelines</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Purpose</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for pipeline in pipelines %}
+        <tr>
+            <td>{{ pipeline.title }}</td>
+            <td>{{ pipeline.author }}</td>
+            <td>{{ pipeline.purpose }}</td>
+            <td>
+                <a href="{% url 'pipeline_detail' pipeline.pk %}">View</a> |
+                <a href="{% url 'pipeline_edit' pipeline.pk %}">Edit</a> |
+                <a href="{% url 'pipeline_delete' pipeline.pk %}">Delete</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">No pipelines available.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

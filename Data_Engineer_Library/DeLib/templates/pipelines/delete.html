@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Delete Pipeline{% endblock %}
+{% block content %}
+<h2>Delete Pipeline</h2>
+<p>Are you sure you want to delete the pipeline "{{ pipeline.title }}"?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Confirm Delete</button>
+    <a href="{% url 'pipeline_detail' pipeline.pk %}">Cancel</a>
+</form>
+{% endblock %}
